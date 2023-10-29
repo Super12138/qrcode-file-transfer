@@ -79,8 +79,8 @@ const ctx = canvas.getContext('2d', {willReadFrequently: true});
 navigator.mediaDevices.getUserMedia({
     video: {
         facingMode: 'environment',
-        width: 1920,
-        height: 1080,
+        width: 1280,
+        height: 720,
     }
 }).then((stream) => {
     video.srcObject = stream;
