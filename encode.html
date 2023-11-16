@@ -1,24 +1,34 @@
 <!doctype html>
-<html lang="en">
+<html>
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no"/>
-    <meta name="renderer" content="webkit"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-
-
     <title>QRCode File Transfer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="stylesheet" href="css/mdui.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
-<body>
-<div style="margin: .5em 0">
-    <div style="display: inline-block">File: <input type="file" id="file-selector"></div>
-    <div style="display: inline-block; margin-right: 2em">Speed: <input type="text" id="speed" value="100" style="width: 4em"> ms.</div>
-    <div style="display: inline-block; margin-right: 2em">Progress: <input type="number" id="current-block-index" value="0" style="width: 6em"> / <span id="all-block-count">100</span>.</div>
-    <div style="display: inline-block"><input type="button" value="Start" id="start-button"></div>
-</div>
-<div id="progress-bar" style="width: 100%; height: 1.5em"></div>
-<img alt="qrcode" id="qrcode" style="display: block; width: 40em; height: 40em; border: 1px solid #eee; image-rendering: pixelated">
-<script src="js/qrcode.js"></script>
-<script src="js/encode.js"></script>
+
+<body class="mdui-theme-auto">
+    <div class="mdui-container mdui-typo">
+        <div class="mdui-row">
+            <div style="margin: .5em 0">
+                <div style="display: inline-block">File: <input type="file" id="file-selector"></div>
+                <div style="display: inline-block; margin-right: 2em">Speed: <input type="text" id="speed" value="100"
+                        style="width: 4em"> ms.</div>
+                <div style="display: inline-block; margin-right: 2em">Progress: <input type="number"
+                        id="current-block-index" value="0" style="width: 6em"> / <span id="all-block-count">100</span>.
+                </div>
+                <div style="display: inline-block"><input type="button" value="Start" id="start-button"></div>
+            </div>
+            <div id="progress-bar" style="width: 100%; height: 1.5em"></div>
+            <img alt="qrcode" id="qrcode"
+                style="display: block; width: 40em; height: 40em; border: 1px solid #eee; image-rendering: pixelated">
+        </div>
+    </div>
+    <script src="js/encode.js"></script>
 </body>
+
 </html>
