@@ -29,13 +29,15 @@ const config = {
     },
     plugins: [
         new HtmlWebpackPlugin({
+            filename: 'encode.html',                                                 
             template: 'encode.html',
             chunks: ['encode'],
         }),
         new HtmlWebpackPlugin({
+            filename: 'decode.html',                                                
             template: 'decode.html',
             chunks: ['decode'],
-        }), 
+        }),
         new CopyPlugin({
             patterns: [
                 { from: 'node_modules/mdui/mdui.css', to: './css' },
@@ -71,10 +73,7 @@ const config = {
 module.exports = () => {
     if (isProduction) {
         config.mode = 'production';
-
-
-        // config.plugins.push(new WorkboxWebpackPlugin.GenerateSW());
-
+        config.plugins.push(new WorkboxWebpackPlugin.GenerateSW());
     } else {
         config.mode = 'development';
     }
