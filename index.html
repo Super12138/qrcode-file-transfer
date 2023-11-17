@@ -11,9 +11,18 @@
     <link rel="stylesheet" href="css/index.css">
 </head>
 
-<body>
-    <h1>Hello world!</h1>
-    <h2>Tip: Check your console</h2>
+<body class="mdui-theme-auto">
+    <div class="mdui-container mdui-typo">
+        <div class="mdui-row">
+            <h1>QRCode File Transfer</h1>
+            请在发送文件的设备上使用<code>编码器</code>对文件进行编码，在接收文件的设备上使用<code>解码器</code>，利用摄像头扫描编码器所编码的二维码获取文件
+            <br>
+            <br>
+            <mdui-button href="encode.html">编码器</mdui-button>
+            <br>
+            <mdui-button href="decode.html">解码器</mdui-button>
+        </div>
+    </div>
 </body>
 
 <script>
@@ -22,10 +31,10 @@
             navigator.serviceWorker
                 .register("service-worker.js")
                 .then((registration) => {
-                    console.log("Service Worker registered: ", registration);
+                    console.log("Service Worker 注册成功：", registration);
                 })
                 .catch((registrationError) => {
-                    console.error("Service Worker registration failed: ", registrationError);
+                    console.error("Service Worker 注册失败：", registrationError);
                 });
         });
     }

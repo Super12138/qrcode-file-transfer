@@ -38,6 +38,10 @@ const config = {
             template: 'decode.html',
             chunks: ['decode'],
         }),
+        new HtmlWebpackPlugin({
+            filename: 'index.html',
+            template: 'index.html',
+        }),
         new CopyPlugin({
             patterns: [
                 { from: 'node_modules/mdui/mdui.css', to: './css' },

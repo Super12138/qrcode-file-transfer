@@ -1,5 +1,6 @@
 import jsQR from "jsqr";
 import { saveAs } from "file-saver";
+import 'mdui/components/button.js';
 
 window.addEventListener("load", async () => {
     document.body.classList.add('ready');

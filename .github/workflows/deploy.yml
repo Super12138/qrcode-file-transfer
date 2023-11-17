@@ -23,6 +23,8 @@ jobs:
       - run: npm install
       - name: Build
         run: npm run build:prod
+      - name: Fix service-worker.js path error
+        run: sed -i 's?"./workbox-2b403519"?"/Hash-Checker/workbox-2b403519"?g' dist/service-worker.js
       - uses: actions/configure-pages@v2
       - uses: actions/upload-pages-artifact@v1
         with:

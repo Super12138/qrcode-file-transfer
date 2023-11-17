@@ -1,4 +1,5 @@
 import qrcode from './qrcode';
+import 'mdui/components/button.js';
 
 window.addEventListener("load", async () => {
         document.body.classList.add('ready');
@@ -157,11 +158,11 @@ document.querySelector('#file-selector').addEventListener('change', (event) => {
             document.querySelector('#start-button').addEventListener('click', (e) => {
                 if (isRun) {
                     isRun = false;
-                    document.querySelector('#start-button').value = 'Start';
+                    document.querySelector('#start-button').label = '开始';
                     return;
                 }
                 isRun = true;
-                document.querySelector('#start-button').value = 'Stop';
+                document.querySelector('#start-button').label = '停止';
 
                 const onTimer = () => {
                     const blockIndex = prevBlockIndex + 1;
