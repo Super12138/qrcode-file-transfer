@@ -6,26 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>QRCode File Transfer Decoder</title>
+    <title>Decoder - QRCode File Transfer</title>
     <link rel="stylesheet" href="css/mdui.css">
     <link rel="stylesheet" href="css/index.css">
 </head>
 
-<body>
-    <div style="margin: .5em 0">
-        <mdui-button id="reset-button">Reset</mdui-button>
-        <div style="display: inline-block">File: <span id="file-name"></span> (<span id="file-length"></span> bytes)
-        </div>
-        <div style="display: inline-block; margin-right: 2em">Speed: <span id="speed"></span> ms.</div>
-        <div style="display: inline-block; margin-right: 2em">Progress: <span id="finished-block-count">0</span> / <span
-                id="all-block-count">100</span>.</div>
-        <mdui-button id="download-button">Download</mdui-button>
-    </div>
-    <canvas id="progress-bar" width="100" height="1"
-        style="width: 100%; height: 1.5em; image-rendering: pixelated"></canvas>
-    <div id="log"></div>
-    <canvas id="canvas" style="width: 100%;"></canvas>
-    <script src="js/decode.js"></script>
+<body class="mdui-theme-auto">
+	<div class="mdui-container mdui-typo">
+		<div class="mdui-row">
+			<mdui-button full-width id="reset-button">Reset</mdui-button>
+			<br>
+			<div style="display: inline-block">File: <span id="file-name"></span> (<span id="file-length"></span> bytes)
+			</div>
+			<div style="display: inline-block; margin-right: 2em">Speed: <span id="speed"></span> ms.</div>
+			<div style="display: inline-block; margin-right: 2em">Progress: <span id="finished-block-count">0</span> / <span id="all-block-count">100</span>.</div>
+			<br>
+			<mdui-button full-width id="download-button">Download</mdui-button>
+			<canvas id="progress-bar" width="100" height="1" style="width: 100%; height: 1.5em; image-rendering: pixelated"></canvas>
+			<div id="log"></div>
+			<canvas id="canvas" style="width: 100%;"></canvas>
+		</div>
+	</div>
 </body>
 
 </html>
