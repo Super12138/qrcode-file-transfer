@@ -1,8 +1,10 @@
 import jsQR from "jsqr";
 import { saveAs } from "file-saver";
-import 'mdui/components/button.js';
 
-window.addEventListener("load", async () => {
+import 'mdui/components/button.js';
+import 'mdui/components/text-field.js';
+
+window.addEventListener("load", () => {
     document.body.classList.add('ready');
 });
 
@@ -83,12 +85,12 @@ document.body.append(canvas);
 const progressBarCtx = progressBarCanvas.getContext('2d');
 progressBarCtx.fillStyle = '#ccc';
 progressBarCtx.fillRect(0, 0, progressBarCanvas.width, progressBarCanvas.height);
-const ctx = canvas.getContext('2d', {willReadFrequently: true});
+const ctx = canvas.getContext('2d', { willReadFrequently: true });
 navigator.mediaDevices.getUserMedia({
     video: {
         facingMode: 'environment',
-        width: 1920,
-        height: 1080,
+        width: 1280,
+        height: 720,
     }
 }).then((stream) => {
     video.srcObject = stream;
@@ -160,7 +162,7 @@ navigator.mediaDevices.getUserMedia({
     });
     document.querySelector('#download-button').addEventListener('click', () => {
         if (fileData) {
-            const blob = new Blob([fileData], {type: 'application/octet-stream'});
+            const blob = new Blob([fileData], { type: 'application/octet-stream' });
             saveAs(blob, fileName);
         }
     });

@@ -1,8 +1,10 @@
 import qrcode from './qrcode';
-import 'mdui/components/button.js';
 
-window.addEventListener("load", async () => {
-        document.body.classList.add('ready');
+import 'mdui/components/button.js';
+import 'mdui/components/text-field.js';
+
+window.addEventListener("load",  () => {
+    document.body.classList.add('ready');
 });
 
 /**
@@ -114,11 +116,13 @@ document.querySelector('#file-selector').addEventListener('change', (event) => {
     readFile(file)
         .then((fileData) => {
             const fileLength = fileData.byteLength;
-            const blockSize = 850;
+            const blockSize = Number(document.querySelector('#block-size').value);
             const blockCount = Math.ceil(fileData.byteLength / blockSize);
             const lastBlockIndex = blockCount;
             let prevBlockIndex;
-            document.querySelector('#all-block-count').textContent = `${blockCount}`;
+            document.querySelector('#current-block-index').suffix = `/${blockCount}`
+            document.querySelector('#current-block-index').max = `${blockCount}`;
+            // document.querySelector('#all-block-count').textContent = `${blockCount}`;
 
             const fileDataToQrcodeBuffer = (blockIndex) => {
                 if (blockIndex === 0) {
@@ -158,11 +162,11 @@ document.querySelector('#file-selector').addEventListener('change', (event) => {
             document.querySelector('#start-button').addEventListener('click', (e) => {
                 if (isRun) {
                     isRun = false;
-                    document.querySelector('#start-button').label = '开始';
+                    document.querySelector('#start-button').innerHTML = 'Start';
                     return;
                 }
                 isRun = true;
-                document.querySelector('#start-button').label = '停止';
+                document.querySelector('#start-button').innerHTML = 'Stop';
 
                 const onTimer = () => {
                     const blockIndex = prevBlockIndex + 1;
