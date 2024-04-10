@@ -27,6 +27,6 @@
   "dependencies": {
     "file-saver": "^2.0.5",
     "jsqr": "^1.4.0",
-    "mdui": "^2.0.1"
+    "mdui": "^2.0.6"
   }
 }
